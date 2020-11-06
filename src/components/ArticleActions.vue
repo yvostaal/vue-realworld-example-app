@@ -68,14 +68,6 @@ export default {
     }
   },
   methods: {
-    toggleFavorite() {
-      if (!this.isAuthenticated) {
-        this.$router.push({ name: "login" });
-        return;
-      }
-      const action = this.article.favorited ? FAVORITE_REMOVE : FAVORITE_ADD;
-      this.$store.dispatch(action, this.article.slug);
-    },
     toggleFollow() {
       if (!this.isAuthenticated) {
         this.$router.push({ name: "login" });
